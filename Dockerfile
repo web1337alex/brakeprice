@@ -25,5 +25,11 @@ RUN chmod -R 664 /var/www/html/ \
     && find /var/www/html/ -type d -exec chmod 775 {} \; \
     && chown -R www-data:www-data /var/www/html/
 
+# Установка прав доступа для папок
+RUN find /var/www/html -type d -exec chmod 755 {} \;
+
+# Установка прав доступа для файлов
+RUN find /var/www/html -type f -exec chmod 644 {} \;
+
 # Открытие портов
 EXPOSE 80
