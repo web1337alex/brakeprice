@@ -18,5 +18,8 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
         && docker-php-ext-install -j$(nproc) gd bcmath bz2 exif gettext gmp mysqli soap sockets xmlrpc zip intl opcache pdo pdo_mysql
 
+# Активация модуля mod_headers для Apache
+RUN a2enmod headers
+
 # Открытие портов
 EXPOSE 80
