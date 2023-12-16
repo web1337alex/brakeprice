@@ -21,5 +21,10 @@ RUN apt-get update && apt-get install -y \
 # Активация модуля mod_headers для Apache
 RUN a2enmod headers
 
+# Настройка прав доступа и владельца для папки source/
+RUN chmod -R 664 /var/www/html/ \
+    && find /var/www/html/ -type d -exec chmod 775 {} \; \
+    && chown -R www-data:www-data /var/www/html/
+
 # Открытие портов
 EXPOSE 80
