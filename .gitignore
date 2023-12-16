@@ -1,2 +1,3 @@
-.idea
-.idea/vcs.xml
+.idea/
+.idea/*
+services/mysql/data/*
