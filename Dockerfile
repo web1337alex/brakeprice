@@ -18,18 +18,15 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
         && docker-php-ext-install -j$(nproc) gd bcmath bz2 exif gettext gmp mysqli soap sockets xmlrpc zip intl opcache pdo pdo_mysql
 
-# Активация модуля mod_headers для Apache
-RUN a2enmod headers
+# Активация модулей mod_rewrite и mod_headers для Apache
+RUN a2enmod rewrite headers
 
+# Установка прав доступа для папок и файлов
 RUN chmod -R 664 /var/www/html/ \
     && find /var/www/html/ -type d -exec chmod 775 {} \; \
-    && chown -R www-data:www-data /var/www/html/
-
-# Установка прав доступа для папок
-RUN find /var/www/html -type d -exec chmod 755 {} \;
-
-# Установка прав доступа для файлов
-RUN find /var/www/html -type f -exec chmod 644 {} \;
+    && chown -R www-data:www-data /var/www/html/ \
+    && find /var/www/html -type d -exec chmod 755 {} \; \
+    && find /var/www/html -type f -exec chmod 644 {} \;
 
 # Открытие портов
 EXPOSE 80
