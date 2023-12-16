@@ -3,3 +3,4 @@
 services/mysql/data/*
 services/apache/logs/*
 services/php/logs/*
+/source/core/cache/*
