@@ -21,6 +21,11 @@ RUN apt-get update && apt-get install -y \
 # Активация модулей mod_rewrite и mod_headers для Apache
 RUN a2enmod rewrite headers
 
+# Установка Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+    && php -r "unlink('composer-setup.php');"
+
 # Установка прав доступа для папок и файлов
 RUN chmod -R 664 /var/www/html/ \
     && find /var/www/html/ -type d -exec chmod 775 {} \; \
