@@ -4,13 +4,12 @@ services:
   php-apache:
     build: .
     volumes:
-      - ./source:/var/www/html # Монтируем исходный код приложения
-      - ./services/php/php.ini:/usr/local/etc/php/php.ini # Настройки PHP
-      - ./services/apache/logs:/var/log/apache2 # Логи Apache
-      - ./services/apache/config/000-default.conf:/etc/apache2/sites-available/000-default.conf # Apache конфиг
-      - ./services/apache/config/000-default.conf:/etc/apache2/sites-enabled/000-default.conf # Активация конфига Apache
+      - ./source:/var/www/html
+      - ./services/php/php.ini:/usr/local/etc/php/php.ini
+      - ./services/apache/logs:/var/log/apache2
+      - ./services/apache/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./services/apache/config/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./services/php/logs/php_errors.log:/var/log/php_errors.log
-
     ports:
       - "80:80"
     depends_on:
@@ -20,13 +19,13 @@ services:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./services/mysql/data:/var/lib/mysql # Данные MySQL
-      - ./services/mysql/config:/etc/mysql/conf.d # Настройки MySQL
+      - ./services/mysql/data:/var/lib/mysql
+      - ./services/mysql/config:/etc/mysql/conf.d
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
 
@@ -35,8 +34,8 @@ services:
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: mysql
-      PMA_USER: user
-      PMA_PASSWORD: password
+      PMA_HOST: ${PMA_HOST}
+      PMA_USER: ${PMA_USER}
+      PMA_PASSWORD: ${PMA_PASSWORD}
     depends_on:
       - mysql
