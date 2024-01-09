@@ -30,7 +30,7 @@ services:
       - "3306:3306"
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    build: ./services/phpmyadmin
     ports:
       - "8080:80"
     environment:
