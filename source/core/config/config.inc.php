@@ -23,27 +23,27 @@ $https_port = '443';
 $uuid = '1fa7d058-608d-467e-a487-26fabf556eed';
 
 if (!defined('MODX_CORE_PATH')) {
-    $modx_core_path= '/var/www/html/core/';
+    $modx_core_path= '/var/www/user110556/data/www/kraski.it-one.pro/core/';
     define('MODX_CORE_PATH', $modx_core_path);
 }
 if (!defined('MODX_PROCESSORS_PATH')) {
-    $modx_processors_path= '/var/www/html/core/model/modx/processors/';
+    $modx_processors_path= '/var/www/user110556/data/www/kraski.it-one.pro/core/model/modx/processors/';
     define('MODX_PROCESSORS_PATH', $modx_processors_path);
 }
 if (!defined('MODX_CONNECTORS_PATH')) {
-    $modx_connectors_path= '/var/www/html/connectors/';
+    $modx_connectors_path= '/var/www/user110556/data/www/kraski.it-one.pro/connectors/';
     $modx_connectors_url= '/connectors/';
     define('MODX_CONNECTORS_PATH', $modx_connectors_path);
     define('MODX_CONNECTORS_URL', $modx_connectors_url);
 }
 if (!defined('MODX_MANAGER_PATH')) {
-    $modx_manager_path= '/var/www/html/manager/';
+    $modx_manager_path= '/var/www/user110556/data/www/kraski.it-one.pro/manager/';
     $modx_manager_url= '/manager/';
     define('MODX_MANAGER_PATH', $modx_manager_path);
     define('MODX_MANAGER_URL', $modx_manager_url);
 }
 if (!defined('MODX_BASE_PATH')) {
-    $modx_base_path= '/var/www/html/';
+    $modx_base_path= '/var/www/user110556/data/www/kraski.it-one.pro/';
     $modx_base_url= '/';
     define('MODX_BASE_PATH', $modx_base_path);
     define('MODX_BASE_URL', $modx_base_url);
@@ -75,7 +75,7 @@ if (!defined('MODX_SITE_URL')) {
     define('MODX_SITE_URL', $site_url);
 }
 if (!defined('MODX_ASSETS_PATH')) {
-    $modx_assets_path= '/var/www/html/assets/';
+    $modx_assets_path= '/var/www/user110556/data/www/kraski.it-one.pro/assets/';
     $modx_assets_url= '/assets/';
     define('MODX_ASSETS_PATH', $modx_assets_path);
     define('MODX_ASSETS_URL', $modx_assets_url);
