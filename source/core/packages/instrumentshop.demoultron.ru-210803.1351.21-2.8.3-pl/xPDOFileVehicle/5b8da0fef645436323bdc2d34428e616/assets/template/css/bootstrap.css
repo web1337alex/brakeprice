@@ -1162,7 +1162,7 @@ hr {
     height: 40px;
 }
 .form-control:focus{
-    border-color: #19B329;
+    border-color: #28A745;
 }
 .form-control[readonly]:focus{
     border-color: #E3E3E4;

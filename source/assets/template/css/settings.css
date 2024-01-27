@@ -681,7 +681,7 @@ a.absolute{
 	transition: all 200ms ease-out;
 }
 .preloader:after{
-    background-color: #19B329;
+    background-color: #28A745;
     content: '';
     position: absolute;
     top: 50%;
@@ -741,7 +741,7 @@ a.absolute{
     body::-webkit-scrollbar-thumb {
         -webkit-border-radius: 0px;
         border-radius: 0px;
-        background-color: #19B329;
+        background-color: #28A745;
     }
     body::-webkit-scrollbar-track {
         background-color: #2C2C2C;
@@ -765,7 +765,7 @@ a.absolute{
     -moz-transition: background-color 200ms ease-out;
     -o-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
-    background: #19B329;
+    background: #28A745;
     font-size: 36px;
 }
 #up:hover{
